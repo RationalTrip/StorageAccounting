@@ -27,34 +27,34 @@ We have 3 entities:
 
 
 - `/api/Equipment` - endpoints for Equipment
--- `get /` - get all equipment, with optional query parameters `start`, `size`
--- `get /count` - get all equipment count
--- `get /{id:int}` - get Equipment by id
--- `post /` - create Equipment
--- `get /{id:int}/contracts` - get all contracts for current equipment, with optional query parameters `start`, `size`
--- `get /{id:int}/contracts/count` - get count of all contracts for current equipment
+    - `get /` - get all equipment, with optional query parameters `start`, `size`
+    - `get /count` - get all equipment count
+    - `get /{id:int}` - get Equipment by id
+    - `post /` - create Equipment
+    - `get /{id:int}/contracts` - get all contracts for current equipment, with optional query parameters `start`, `size`
+    - `get /{id:int}/contracts/count` - get count of all contracts for current equipment
 
 
 
 
 - `/api/RentingContract` - endpoints for RentingContract
--- `get /` - get all contracts, with optional query parameters `start`, `size`
--- `get /count` - get all contracts count
--- `post /` - create contract
--- `get /{id:int}` - get contract by id
--- `delete /{id:int} `- delete contract by id
+    - `get /` - get all contracts, with optional query parameters `start`, `size`
+    - `get /count` - get all contracts count
+    - `post /` - create contract
+    - `get /{id:int}` - get contract by id
+    - `delete /{id:int} `- delete contract by id
 
 
 
 
 - `/api/StorageRoom` - endpoints for StorageRoom
--- `get /` - get all rooms, with optional query parameters `start`, `size`
--- `get /count` - get all rooms count
--- `post /` - create room
--- `get /{id:int}` - get room by id
--- `get /{id:int}/contracts` - get all contracts stored in current room, with optional query parameters `start`, `size`
--- `get /{id:int}/contracts/count` - get count of all contracts stored in current room
--- `get /{id:int}/area` - get information about occupied area
+    - `get /` - get all rooms, with optional query parameters `start`, `size`
+    - `get /count` - get all rooms count
+    - `post /` - create room
+    - `get /{id:int}` - get room by id
+    - `get /{id:int}/contracts` - get all contracts stored in current room, with optional query parameters `start`, `size`
+    - `get /{id:int}/contracts/count` - get count of all contracts stored in current room
+    - `get /{id:int}/area` - get information about occupied area
 
 
 # Execution
