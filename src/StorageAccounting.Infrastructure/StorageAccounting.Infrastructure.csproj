@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StorageAccounting.Application\StorageAccounting.Application.csproj" />
+    <ProjectReference Include="..\StorageAccounting.Domain\StorageAccounting.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
