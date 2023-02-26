@@ -9,7 +9,7 @@ namespace StorageAccounting.Application.Repositories
     {
         Task<int> GetCountAsync(CancellationToken token);
         Task<Result<IEnumerable<T>>> GetAllAsync(int? start, int? size, CancellationToken token);
-        Task<Result<T>> GetById(TKey id, CancellationToken token);
+        Task<Result<T>> GetByIdAsync(TKey id, CancellationToken token);
         Task<Result<T>> CreateAsync(T entity, CancellationToken token);
         Task<Result<T>> UpdateAsync(T entity, CancellationToken token);
         Task<bool> IsExistsAsync(TKey id, CancellationToken token);

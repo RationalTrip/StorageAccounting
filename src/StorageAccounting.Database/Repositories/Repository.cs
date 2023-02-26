@@ -38,7 +38,7 @@ namespace StorageAccounting.Database.Repositories
                     .ToListAsync(token);
         public async Task<int> GetCountAsync(CancellationToken token) =>
             await _context.Set<TEntity>().CountAsync(token);
-        public virtual async Task<Result<TEntity>> GetById(TKey id, CancellationToken token)
+        public virtual async Task<Result<TEntity>> GetByIdAsync(TKey id, CancellationToken token)
         {
             var entity = await _context.FindAsync<TEntity>(id, token);
 

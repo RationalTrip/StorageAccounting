@@ -50,7 +50,7 @@ namespace StorageAccounting.Infrastructure.Services
         private async Task<Result<RentingContract>> ValidateContractAsync(RentingContract contract,
             CancellationToken token)
         {
-            var equipmentResult = await _equipmentRepo.GetById(contract.EquipmentId, token);
+            var equipmentResult = await _equipmentRepo.GetByIdAsync(contract.EquipmentId, token);
             if (equipmentResult.IsFaulted)
                 return equipmentResult.AsFaultResult<RentingContract>();
 
@@ -91,7 +91,7 @@ namespace StorageAccounting.Infrastructure.Services
 
         public async Task<Result<RentingContractReadDto>> GetByIdAsync(int id, CancellationToken token)
         {
-            var contractResult = await _contractRepo.GetById(id, token);
+            var contractResult = await _contractRepo.GetByIdAsync(id, token);
 
             if (contractResult.IsFaulted)
                 return contractResult.AsFaultResult<RentingContractReadDto>();

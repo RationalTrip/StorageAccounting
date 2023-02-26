@@ -59,7 +59,7 @@ namespace StorageAccounting.Infrastructure.Services
 
         public async Task<Result<EquipmentReadDto>> GetByIdAsync(int id, CancellationToken token)
         {
-            var equipmentResult = await _equipmentRepo.GetById(id, token);
+            var equipmentResult = await _equipmentRepo.GetByIdAsync(id, token);
 
             if (equipmentResult.IsFaulted)
                 return equipmentResult.AsFaultResult<EquipmentReadDto>();

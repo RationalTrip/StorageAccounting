@@ -58,7 +58,7 @@ namespace StorageAccounting.Infrastructure.Services
 
         public async Task<Result<StorageRoomReadDto>> GetByIdAsync(int id, CancellationToken token)
         {
-            var roomResult = await _roomRepo.GetById(id, token);
+            var roomResult = await _roomRepo.GetByIdAsync(id, token);
 
             if (roomResult.IsFaulted)
                 return roomResult.AsFaultResult<StorageRoomReadDto>();
