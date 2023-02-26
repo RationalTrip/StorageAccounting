@@ -1,10 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 using StorageAccounting.Application.Profiles;
 using StorageAccounting.Application.Repositories;
 using StorageAccounting.Application.Services;
 using StorageAccounting.Database.Contexts;
 using StorageAccounting.Database.Repositories;
 using StorageAccounting.Infrastructure.Services;
+using StorageAccounting.WebAPI.Security.Authorization;
 
 namespace StorageAccounting.WebAPI.Extensions
 {
@@ -34,5 +36,8 @@ namespace StorageAccounting.WebAPI.Extensions
                 opt.AddProfile<StorageRoomProfile>();
                 opt.AddProfile<RentingContractProfile>();
             });
+
+        public static IServiceCollection AddAuthorizationCustomResult(this IServiceCollection services) =>
+            services.AddSingleton<IAuthorizationMiddlewareResultHandler, AuthorizationCustomResultMiddleware>();
     }
 }
