@@ -11,7 +11,7 @@ namespace StorageAccounting.WebAPI.Extensions
             EntityNotFoundException notFoundExc =>
                 new NotFoundObjectResult(notFoundExc.ToErrorDto(StatusCodes.Status404NotFound)),
 
-            NotEnoughArea notEnoughAreaExc =>
+            NotEnoughAreaException notEnoughAreaExc =>
                 new BadRequestObjectResult(notEnoughAreaExc.ToErrorDto(StatusCodes.Status400BadRequest)),
 
             UniqueValueAlreadyExistsException valueExistsExc =>
