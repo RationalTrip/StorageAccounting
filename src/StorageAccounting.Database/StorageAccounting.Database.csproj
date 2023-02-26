@@ -19,4 +19,8 @@
     <ProjectReference Include="..\StorageAccounting.Domain\StorageAccounting.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="StorageAccounting.Database.Tests" />
+  </ItemGroup>
+
 </Project>
