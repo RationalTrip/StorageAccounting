@@ -23,7 +23,7 @@ namespace StorageAccounting.WebAPI.Controllers
         private const string CreateEquipmentRouteName = nameof(EquipmentController) + "." + nameof(GetByIdAsync);
 
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(IEnumerable<EquipmentReadDto>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<EquipmentReadDto>>> GetAllAsync(CancellationToken token,
             [FromQuery] int? start = null,
@@ -34,7 +34,7 @@ namespace StorageAccounting.WebAPI.Controllers
                     exc => exc.Handle());
 
         [HttpGet("count")]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(CountReadDto), StatusCodes.Status200OK)]
         public async Task<ActionResult<CountReadDto>> GetCountAsync(CancellationToken token) =>
             (await _equipmentService.GetCountAsync(token))
@@ -43,7 +43,7 @@ namespace StorageAccounting.WebAPI.Controllers
                     exc => exc.Handle());
 
         [HttpGet("{id}", Name = CreateEquipmentRouteName)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(EquipmentReadDto), StatusCodes.Status200OK)]
         public async Task<ActionResult<EquipmentReadDto>> GetByIdAsync(int id, CancellationToken token) =>
@@ -53,7 +53,7 @@ namespace StorageAccounting.WebAPI.Controllers
                     exc => exc.Handle());
 
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(EquipmentReadDto), StatusCodes.Status201Created)]
         public async Task<ActionResult<EquipmentReadDto>> CreateAsync(EquipmentCreateDto createModel,
@@ -64,7 +64,7 @@ namespace StorageAccounting.WebAPI.Controllers
                     exc => exc.Handle());
 
         [HttpGet("{id}/contracts")]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(IEnumerable<RentingContractReadDto>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<RentingContractReadDto>>> GetRentingContractsAsync(int id,
@@ -78,7 +78,7 @@ namespace StorageAccounting.WebAPI.Controllers
 
 
         [HttpGet("{id}/contracts/count")]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(CountReadDto), StatusCodes.Status200OK)]
         public async Task<ActionResult<CountReadDto>> GetRentingContractsCountAsync(int id,

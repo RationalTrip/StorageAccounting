@@ -23,7 +23,7 @@ namespace StorageAccounting.WebAPI.Controllers
         private const string CreateRentingContractRouteName = nameof(RentingContract) + "." + nameof(GetByIdAsync);
 
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(IEnumerable<RentingContractReadDto>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<RentingContractReadDto>>> GetAllAsync(CancellationToken token,
             [FromQuery] int? start = null,
@@ -34,7 +34,7 @@ namespace StorageAccounting.WebAPI.Controllers
                     exc => exc.Handle());
 
         [HttpGet("count")]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(CountReadDto), StatusCodes.Status200OK)]
         public async Task<ActionResult<CountReadDto>> GetCountAsync(CancellationToken token) =>
             (await _contractService.GetCountAsync(token))
@@ -43,7 +43,7 @@ namespace StorageAccounting.WebAPI.Controllers
                     exc => exc.Handle());
 
         [HttpGet("{id}", Name = CreateRentingContractRouteName)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(RentingContractReadDto), StatusCodes.Status200OK)]
         public async Task<ActionResult<RentingContractReadDto>> GetByIdAsync(int id, CancellationToken token) =>
@@ -53,7 +53,7 @@ namespace StorageAccounting.WebAPI.Controllers
                     exc => exc.Handle());
 
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(RentingContractReadDto), StatusCodes.Status201Created)]
@@ -65,7 +65,7 @@ namespace StorageAccounting.WebAPI.Controllers
                     exc => exc.Handle());
 
         [HttpDelete("{id}")]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ErrorDto), StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult> RemoveAsync(int id, CancellationToken token) =>

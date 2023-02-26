@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
 using StorageAccounting.WebAPI.Extensions;
 using StorageAccounting.WebAPI.Security.Authorization;
@@ -23,6 +24,8 @@ builder.Services.AddAuthentication("SimpleApiKey")
         "SimpleApiKey",
         opts => opts.ApiKey = builder.Configuration.GetValue<string>("ApiKey")
     );
+
+builder.Services.AddSingleton<IAuthorizationMiddlewareResultHandler, AuthorizationCustomResultMiddleware>();
 
 builder.Services.AddSwaggerGen(opt =>
 {
