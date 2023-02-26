@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageAccounting.Database.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageAccounting.Infrastructure.Tests", "tests\unit\StorageAccounting.Infrastructure.Tests\StorageAccounting.Infrastructure.Tests.csproj", "{384D5AF8-424C-454B-A080-3E6B30A6C0C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageAccounting.WebAPI.Tests", "tests\unit\StorageAccounting.WebAPI.Tests\StorageAccounting.WebAPI.Tests.csproj", "{A5F37190-9AB2-4C55-BB6D-7526E5C5B92C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{384D5AF8-424C-454B-A080-3E6B30A6C0C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{384D5AF8-424C-454B-A080-3E6B30A6C0C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{384D5AF8-424C-454B-A080-3E6B30A6C0C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5F37190-9AB2-4C55-BB6D-7526E5C5B92C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5F37190-9AB2-4C55-BB6D-7526E5C5B92C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5F37190-9AB2-4C55-BB6D-7526E5C5B92C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5F37190-9AB2-4C55-BB6D-7526E5C5B92C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{C87B8A02-4825-4F0E-A2B7-F900E6049E6E} = {F384388B-A6C2-4D1C-960E-08DDF49E1DD4}
 		{6882CB83-2271-435C-9492-3737DF9A9757} = {C87B8A02-4825-4F0E-A2B7-F900E6049E6E}
 		{384D5AF8-424C-454B-A080-3E6B30A6C0C1} = {C87B8A02-4825-4F0E-A2B7-F900E6049E6E}
+		{A5F37190-9AB2-4C55-BB6D-7526E5C5B92C} = {C87B8A02-4825-4F0E-A2B7-F900E6049E6E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2C35B55A-F330-44CF-A494-A93D264B09EC}
