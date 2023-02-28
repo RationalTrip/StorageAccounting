@@ -4,7 +4,7 @@
 ## Technologies
 
 
-.Net 6, EntityFramework Core 7, MS SQL Server
+.Net 6, EntityFramework Core 7, MS SQL Server, Redis
 
 
 ## Overview
@@ -62,9 +62,9 @@ We have 3 entities:
 
 For running application in Development mode, you should:
 
-
-1. in file `./src/StorageAccounting.WebAPI/appsettings.Development.json` specify Sql Server connection string with the key `ConnectionStrings:StorageAccountingSqlServer`
-2. open project manager console, select project `./src/StorageAccounting.Database` and apply migration by command
+1. in file `./src/StorageAccounting.WebAPI/appsettings.Development.json` specify Redis connection string with the key `ConnectionStrings:StorageAccountingRedis`
+2. in file `./src/StorageAccounting.WebAPI/appsettings.Development.json` specify Sql Server connection string with the key `ConnectionStrings:StorageAccountingSqlServer`
+3. open project manager console, select project `./src/StorageAccounting.Database` and apply migration by command
 ```bash
 $update-database
 ```
@@ -79,5 +79,5 @@ $update-database
 - StorageAccounting.Domain - Entities, common classes and exceptions
 - StorageAccounting.Application - Models, Dtos, Mapping, Service and Repository Interfaces
 - StorageAccounting.Database - Context, Migrations, Repository implementation
-- StorageAccounting.Infrastructure - Services implementation
+- StorageAccounting.Infrastructure - Services implementation, Redis Service implementation, Cache Decorators for Services
 - StorageAccounting.WebAPI - Controllers, Authentication Handler, Composition root, Entry point
