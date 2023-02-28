@@ -13,6 +13,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddStorageAccountingDbContext(builder.Configuration);
 
+builder.Services.AddStorageAccountingRedis(builder.Configuration);
+
 builder.Services.AddStorageAccountingAutoMapper();
 
 builder.Services.AddRepositories();
