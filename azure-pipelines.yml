@@ -7,6 +7,7 @@ trigger:
 - master
 
 pool:
+  name: Default 
   vmImage: ubuntu-latest
 
 variables:
@@ -15,7 +16,13 @@ variables:
   storageAccountingProject: 'src/StorageAccounting.WebAPI/StorageAccounting.WebAPI.csproj'
 
 steps:
+- task: UseDotNet@2
+  displayName: Use .NET 6
+  inputs:
+    packageType: 'sdk'
+    version: '6.x'
 - task: DotNetCoreCLI@2
+  displayName: Restore
   inputs:
     command: 'restore'
     feedsToUse: 'select'
@@ -28,6 +35,7 @@ steps:
     arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
+  displayName: Unit Tests
   inputs:
     command: 'test'
     projects: $(unitTests)
@@ -35,6 +43,7 @@ steps:
     testRunTitle: 'Running Unit Tests'
 
 - task: DotNetCoreCLI@2
+  displayName: Publish
   inputs:
     command: 'publish'
     publishWebProjects: false
